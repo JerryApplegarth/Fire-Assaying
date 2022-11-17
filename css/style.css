@@ -1,0 +1,189 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+}
+
+input,
+button,
+textarea {
+	font: inherit;
+}
+
+:root {
+	/*Fonts */
+	--FONT-FAMILY: "Nunito", sans-serif;
+	--FONT-FAMILY-HEADINGS: "fugaz One", cursive;
+	--FONT-SIZE: clamp(1rem, 2.2vh, 1.5rem);
+
+	/*Colors */
+	--BGCOLOR: orange;
+	--BGCOLOR-FADE: rgb(252, 220, 160);
+	--BG-IMAGE: linear-gradient(to bottom, var(--BGCOLOR), var (--BGCOLOR-FADE));
+	--BODY-BACKGROUND-COLOR: #fff;
+	--FONT-COLOR: #000;
+	--BORDER-COLOR: #333;
+	--HIGHLIGHT-COLOR: rgb(51, 178, 51);
+	--LINK-COLOR: #000;
+	--LINK-HOVER: hsla(0, 0%, 0%, 0.6);
+	--LINK-ACTIVE: orange;
+	--HEADER-BACKGROUND: #000;
+	--HEADER-COLOR: #fff;
+	--NAV-BACKGROUND-COLOR: #fff;
+	--HERO-BACKGROUND-COLOR: rgba(51, 178, 51, 0.75);
+	--HERO-COLOR: #fff;
+	--BUTTON-COLOR: #fff;
+
+	/*  Borders*/
+	--BORDERS: 1px solid var(--BORDER-COLOR);
+	--BORDERS-RADIUS: 15px;
+
+	/* Standard Padding*/
+	--PADDING-TOP-BOTTOM: 0.25em;
+	--PADDING-SIDE: 2.5%;
+
+	/* Standard Margin*/
+	--MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
+	--MARGIN-P: clamp(2em 2em);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--BGCOLOR: black;
+		--BGCOLOR-FADE: gray;
+		--HEADER-COLOR: whitesmoke;
+		--NAV-BACKGROUND-COLOR: rgb(20, 20, 20);
+		--HERO-COLOR: #333;
+		--BODY-BACKGROUND-COLOR: #333;
+		--FONT-COLOR: whitesmoke;
+		--HIGHLIGHT-COLOR: whitesmoke;
+		--BORDER-COLOR: whitesmoke;
+		--LINK-COLOR: whitesmoke;
+		--LINK-HOVER: orange;
+		--LINK-ACTIVE: rgb(252, 200, 103);
+		--BUTTON-COLOR: #000;
+	}
+}
+
+/* Utility Classes*/
+.offscreen {
+	position: absolute;
+	left: -10000px;
+}
+.nowrap {
+	white-space: nowrap;
+}
+.center {
+	text-align: center;
+}
+
+/* Footer*/
+.footer {
+	position: sticky;
+	bottom: 0;
+	background-color: var(--HEADER-BACKGROUND);
+	color: var(--HEADER-COLOR);
+	padding: var(--PADDING-TOP-BOTTOM) var(--PADDING-SIDE);
+	text-align: center;
+}
+/* General Items*/
+html {
+	scroll-behavior: smooth;
+	font-size: var(--FONT-SIZE);
+	font-family: var(--FONT-FAMILY);
+	background-color: var(--BGCOLOR);
+	background-image: var(--BG-IMAGE);
+	display: grid;
+	place-items: center;
+}
+body {
+	background-color: var(--BODY-BACKGROUND-COLOR);
+	color: var(--FONT-COLOR);
+	min-height: 100vh;
+	max-width: 80%;
+	margin: 0;
+	border-left: var(--BORDERS);
+	border-right: var(--BORDERS);
+	box-shadow: 0 0 10px var(--BORDER-COLOR);
+}
+h1,
+h2,
+h3 {
+	font-family: var(--FONT-FAMILY-HEADINGS);
+}
+h2,
+h3 {
+	margin-bottom: 1em;
+	color: var(--HIGHLIGHT-COLOR);
+}
+p {
+	line-height: 1.5;
+}
+a:any-link {
+	color: var(--LINK-COLOR);
+}
+a:hover,
+a:focus-visible {
+	color: var(--LINK-HOVER);
+}
+a:active {
+	color: var(--LINK-ACTIVE);
+}
+/* Headers*/
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+.header__h1 {
+	text-align: center;
+	background-color: var(--HEADER-BACKGROUND);
+	color: var(--HEADER-COLOR);
+}
+.header__nav {
+	background-color: var(--NAV-BACKGROUND-COLOR);
+	color: var(--HEADER-COLOR);
+	border-bottom: 0;
+	font-weight: bold;
+}
+.header__links {
+	display: flex;
+	justify-content: space-evenly;
+}
+/* Hero Section */
+.hero {
+	position: relative;
+}
+.hero__h2 {
+	background-color: var(--HERO-BACKGROUND-COLOR);
+	color: var(--HEADER-COLOR);
+	padding: 0.25em 0.5em;
+	text-shadow: 2px 2px 5px var(--BORDER-COLOR);
+	position: absolute;
+	top: -100px;
+	left: 20px;
+	animation: showWelcome 0.5s ease-in-out 1s forwards;
+}
+@keyframes showWelcome {
+	0% {
+		top: -20px;
+		transform: skew(0deg, -5deg) scaleY(0);
+	}
+	80% {
+		top: 30px;
+		transform: skew(10deg, -5deg) scaleY(1.2);
+	}
+	100% {
+		top: 20px;
+		transform: skew(-10deg, -5deg) scaleY(1);
+	}
+}
+.sands__p {
+	margin-top: 6em;
+}
+p {
+	margin: var(--MARGIN-P);
+}
