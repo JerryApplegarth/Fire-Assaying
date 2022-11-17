@@ -22,13 +22,13 @@ textarea {
 	/*Colors */
 	--BGCOLOR: orange;
 	--BGCOLOR-FADE: rgb(252, 220, 160);
-	--BG-IMAGE: linear-gradient(to bottom, var(--BGCOLOR), var (--BGCOLOR-FADE));
+	--BG-IMAGE: linear-gradient(to bottom, var(--BGCOLOR), var(--BGCOLOR-FADE));
 	--BODY-BACKGROUND-COLOR: #fff;
 	--FONT-COLOR: #000;
 	--BORDER-COLOR: #333;
 	--HIGHLIGHT-COLOR: rgb(51, 178, 51);
-	--LINK-COLOR: #000;
-	--LINK-HOVER: hsla(0, 0%, 0%, 0.6);
+	--LINK-COLOR: rgb(195, 91, 27);
+	--LINK-HOVER: hsla(46, 50%, 48%, 0.6);
 	--LINK-ACTIVE: orange;
 	--HEADER-BACKGROUND: #000;
 	--HEADER-COLOR: #fff;
@@ -47,7 +47,7 @@ textarea {
 
 	/* Standard Margin*/
 	--MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
-	--MARGIN-P: clamp(2em 2em);
+	--MARGIN-P: clamp(2em 2em 2em);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -186,4 +186,21 @@ a:active {
 }
 p {
 	margin: var(--MARGIN-P);
+}
+/* images*/
+.shop {
+	display: flex;
+	flex-grow: 1;
+	width: 100%;
+	border: 0;
+}
+.hittle {
+	display: flex;
+	flex-grow: 1;
+}
+.furnace {
+	display: flex;
+	flex-grow: 1;
+	width: 100%;
+	border: 0;
 }
